@@ -1,0 +1,24 @@
+### to start with example
+
+# make venv with
+python3 -m venv ./venv
+# to start a venv
+alias venv='source venv/bin/activate'
+
+# make sure to be in venv before installing requirements
+pip install -r requirements.txt
+
+# make postgres schema
+psql
+    create database example_database
+    create database example_database_test
+
+# run tests with coverage, should be 100%
+python3 manage.py cov
+
+# to print in unit tests,
+from log import INFO
+INFO("THIS MESSAGE PRINTS TO CONSOLE")
+
+# run server --port optional
+python3 manage.py runserver --port 8080
